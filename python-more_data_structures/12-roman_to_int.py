@@ -2,7 +2,7 @@
 
 
 def roman_to_int(roman_string):
-
+    
     if not roman_string or not isinstance(roman_string, str):
         return 0
 
@@ -18,6 +18,6 @@ def roman_to_int(roman_string):
         if last_entry < digit:
             num -= 2 * last_entry
 
-            last_entry = digit
+        last_entry = digit
 
     return (num)
