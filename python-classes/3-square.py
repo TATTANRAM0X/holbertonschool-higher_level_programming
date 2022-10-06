@@ -11,7 +11,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
-        """ Public instance method """
-        def area(self):
-            area = pow(self.__size, 2)
-            return area
+    """ Public instance method """
+    def area(self):
+        area = pow(self.__size, 2)
+        return area
