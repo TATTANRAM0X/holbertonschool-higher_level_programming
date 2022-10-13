@@ -2,12 +2,12 @@
 """ Class that defines a rectangle """
 
 
-class rectangle:
+class Rectangle:
     """
     class defined by width and height with public instance methods
     that return Rectangle's area and perimeter
     """
-    def __init__(self,with=0, height=0):
+    def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
 
@@ -44,7 +44,7 @@ class rectangle:
     def height(self, value):
         """ Sets the height of the rectangle """
         if type(value) is not int:
-            raise TypeError("height must be >= 0")
+            raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = velue
@@ -62,10 +62,10 @@ class rectangle:
             raise TypeError("width must be an intrger")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self-__width = value
+        self.__width = value
 
     """
-    public instance method that returns the rectangle area
+    Public instance method that returns the rectangle area
     """
     def area(self):
         area = self.width * self.height
