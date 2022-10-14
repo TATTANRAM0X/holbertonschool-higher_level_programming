@@ -3,7 +3,8 @@
 
 
 class MyList(list):
-    """A class named MyList
+    """
+    A class named MyList
     Attributes:
     attr1(print_sorted): prints sorted list
     """
