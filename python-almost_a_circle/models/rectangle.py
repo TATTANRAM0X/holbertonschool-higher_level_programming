@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+''' File for class Rectangle '''
 from models.base import Base
 
 class Rectangle(Base):
