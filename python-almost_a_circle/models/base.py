@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' File for class Base'''
+''' File for class Base '''
 
 class Base:
     ''' Base class task instruction '''
