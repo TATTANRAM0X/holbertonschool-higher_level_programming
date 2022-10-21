@@ -20,21 +20,6 @@ class Rectangle(Base):
         '''height getter method validation'''
         return self.__height
 
-    @property
-    def width(self):
-        ''' width getter method validation '''
-        return self.__width
-
-    @property
-    def x(self):
-        ''' x getter method validation '''
-        return self.__x
-
-    @property
-    def y(self):
-        ''' y getter method validation '''
-        return self.__y
-
     @height.setter
     def height(self, value):
         ''' height setter method validation '''
@@ -43,6 +28,11 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
+
+    @property
+    def width(self):
+        ''' width getter method validation '''
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -53,6 +43,11 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = value
 
+    @property
+    def x(self):
+        ''' x getter method validation '''
+        return self.__x
+
     @x.setter
     def x(self, value):
         ''' x setter method validation '''
@@ -61,6 +56,11 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
+
+    @property
+    def y(self):
+        ''' y getter method validation '''
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -74,3 +74,12 @@ class Rectangle(Base):
     def area(self):
         ''' Returns the value of the area of the Rectangle instance '''
         return self.__width * self.__height
+
+    def display(self):
+        """Prints in stdout the instance with the character #"""
+        for row in range(self.__height):
+            if self.__x > 0:
+                print(" " * self.__x, end="")
+            for column in range(self.__width):
+                print("#", end="")
+            print()
