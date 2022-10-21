@@ -83,6 +83,8 @@ class Rectangle(Base):
             for column in range(self.__width):
                 print("#", end="")
             print()
+
     def __str__(self):
         ''' Returns a string representation of a Rectangle '''
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        return (f"[Rectangle]\
+                ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
