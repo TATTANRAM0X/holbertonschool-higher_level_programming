@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-''' File for class Rectangle. '''
+''' File for class Rectangle '''
 
 from models.base import Base
 
@@ -118,3 +118,9 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """return format of dictionary"""
+        dictionary = {'id': self.id,'x': self.x,'y': self.y,
+        'width': self.width,'height': self.height}
+        return dictionary
