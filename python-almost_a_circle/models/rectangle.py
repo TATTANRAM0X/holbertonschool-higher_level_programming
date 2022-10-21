@@ -121,4 +121,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Return format of dictionary"""
-        return {'id':self.id,'x':self.x,'y':self.y,'width': self.width,'height':self.height}
+        return {
+            'id': self.id, 'x': self.x, 'y':self.y,
+            'width': self.width,'height':self.height
+        }
