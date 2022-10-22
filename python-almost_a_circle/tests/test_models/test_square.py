@@ -12,3 +12,6 @@ class TestSquareClass(unittest.TestCase):
     Unit test class to check Square class
     """
     pass
+
+if  __name__  ==  '__main__':
+    unittest.main()

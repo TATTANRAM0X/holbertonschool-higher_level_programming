@@ -11,3 +11,6 @@ class TestRectangleClass(unittest.TestCase):
     Unit test class to check Rectangle class
     """
     pass
+
+if  __name__  ==  '__main__':
+    unittest.main()
