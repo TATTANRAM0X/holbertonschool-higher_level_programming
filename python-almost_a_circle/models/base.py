@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 ''' File for class Base '''
-
-
 import json
 
 
 class Base:
     ''' Base class task instruction '''
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -20,9 +17,9 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        ''' Returns the JSON string representation of list_dict '''
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
+        ''' Returns the JSON string representation of a list of dict '''
+        if list_dictionaries is None:
+            list_dictionaries = []
         dictJson = json.dumps(list_dictionaries)
         return dictJson
 
@@ -39,28 +36,32 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        '''returns the list of the JSON string representation json_string'''
+        ''' Returns the list of the JSON string representation json_string '''
         if json_string is None or len(json_string) == 0:
             return []
-        return json.loads(json_string)
+        strJson = json.loads(json_string)
+        return strJson
 
     @classmethod
     def create(cls, **dictionary):
-        '''returns an instance with all attributes already set'''
+        ''' Returns an instance with all attributes already set '''
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        if cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return(dummy)
+            dummyInstance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummyInstance = cls(1)
+        dummyInstance.update(**dictionary)
+        return dummyInstance
 
     @classmethod
     def load_from_file(cls):
-        '''returns a list of instances'''
+        '''  Returns a list of instances '''
         filename = cls.__name__ + ".json"
+        list = []
         try:
-            with open(filename, "r", encoding="utf-8") as file:
-                l_dic = Base.from_json_string(file.read())
-                return [cls.create(**dicti) for dicti in l_dic]
-        except Exception:
-            return []
+            with open(filename, 'r') as f:
+                list = cls.from_json_string(f.read())
+            for i, e in enumerate(list):
+                list[i] = cls.create(**list[i])
+        except:
+            pass
+        return list
