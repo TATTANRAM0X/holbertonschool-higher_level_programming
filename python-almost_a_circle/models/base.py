@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-'''Write the class Base'''
+''' File for class Base '''
 
 
 import json
 
 
 class Base:
-    '''Initialize the class'''
+    ''' Base class task instruction '''
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        '''Initialize'''
+        ''' Inicialezes an instance '''
         if id is not None:
             self.id = id
         else:
@@ -20,10 +20,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        '''returns the JSON string representation of list_dictionaries'''
+        ''' Returns the JSON string representation of list_dict '''
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return json.dumps(list_dictionaries)
+        dictJson = json.dumps(list_dictionaries)
+        return dictJson
 
     @classmethod
     def save_to_file(cls, list_objs):
