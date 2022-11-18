@@ -19,8 +19,9 @@ def states_with_N():
         database=argv[3])
 
     cur = data_base.cursor()
-    cur.execute('SELECT id, name FROM states WHERE name LIKE BINARY 'N%' \
-             ORDER BY states.id ASC')
+    query = "SELECT id, name FROM states WHERE name LIKE BINARY 'N%' \
+             ORDER BY states.id ASC"
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
