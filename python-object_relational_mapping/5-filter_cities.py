@@ -23,7 +23,7 @@ def cities():
     cur = data_base.cursor()
     query = "SELECT t1.id, t1.name, t2.name FROM cities t1 \
              LEFT JOIN states t2 ON t1.state_id = t2.id \
-             ORDER BY t1.id ASC".format(argv[4])
+             WHERE t2.name = '{}' ORDER BY t1.id ASC".format(argv[4])
     cur.execute(query)
 
     rows = cur.fetchall()
