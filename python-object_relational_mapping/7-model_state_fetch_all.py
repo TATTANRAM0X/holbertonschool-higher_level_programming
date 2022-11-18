@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Function list_all_states() which lists all the
+Function model_state_fetch_all() which lists all the
 states of a database
 '''
 from sqlalchemy import create_engine
@@ -9,7 +9,7 @@ from model_state import Base, State
 import sys
 
 
-def list_all_states():
+def model_state_fetch_all():
     ''' lists all State objects from the database '''
 
     address_ = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
@@ -31,4 +31,4 @@ def list_all_states():
 
 
 if __name__ == "__main__":
-    list_all_states()
+    model_state_fetch_all()
