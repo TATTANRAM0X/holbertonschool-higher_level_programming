@@ -12,10 +12,10 @@ import sys
 def model_state_fetch_all():
     ''' lists all State objects from the database '''
 
-    address_ = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
-                                                          sys.argv[2],
-                                                          sys.argv[3])
-    engine = create_engine(address_, pool_pre_ping=True)
+    url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
+                                                      sys.argv[2],
+                                                      sys.argv[3])
+    engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     State.metadata.create_all(engine)
 
