@@ -19,8 +19,8 @@ def filter_states():
         database=argv[3])
 
     cur = data_base.cursor()
-    query = f"SELECT id, name FROM states WHERE BINARY name = '{argv[4]}' \
-             ORDER BY states.id ASC"
+    query = "SELECT id, name FROM states WHERE BINARY name = '{}' \
+             ORDER BY states.id ASC".format(argv[4])
     cur.execute(query)
 
     rows = cur.fetchall()
