@@ -18,9 +18,12 @@ def filter_states():
         password=argv[2],
         database=argv[3])
 
+    if ';' in argv[4]:
+        return
+
     cur = data_base.cursor()
-    query = "SELECT id, name FROM states WHERE BINARY name = '%s' \
-             ORDER BY states.id ASC" % (argv[4])
+    query = "SELECT id, name FROM states WHERE BINARY name = '{}' \
+             ORDER BY states.id ASC".format(argv[4])
     cur.execute(query)
 
     rows = cur.fetchall()
