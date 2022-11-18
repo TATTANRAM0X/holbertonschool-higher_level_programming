@@ -12,8 +12,8 @@ def print_first_state():
     ''' Prints the first State object from the database hbtn_0e_6_usa '''
 
     address = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
-                                                         sys.argv[2],
-                                                         sys.argv[3])
+                                                        sys.argv[2],
+                                                        sys.argv[3])
     engine = create_engine(address, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     State.metadata.create_all(engine)
