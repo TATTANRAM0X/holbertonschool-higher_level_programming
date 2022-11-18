@@ -20,7 +20,7 @@ def filter_states():
 
     cur = data_base.cursor()
     query = "SELECT id, name FROM states WHERE BINARY name = '%s' \
-             ORDER BY states.id ASC" %(argv[4])
+             ORDER BY states.id ASC" % (argv[4])
     cur.execute(query)
 
     rows = cur.fetchall()
