@@ -1,27 +1,25 @@
 #!/usr/bin/python3
-'''
+"""
 This module contains the function model_state_my_get()
-'''
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+"""
 from model_state import Base, State
 import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
 def model_state_my_get():
-    '''
-    prints the State object with the name passed
-    as argument from the database hbtn_0e_6_usa
-    '''
+    """prints the State object with the name passed
+       as argument from the database hbtn_0e_6_usa"""
 
-    address = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
-                                                          sys.argv[2],
-                                                          sys.argv[3])
+    url = 'mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1],
+                                                      sys.argv[2],
+                                                      sys.argv[3])
 
     if ';' in argv[4]:
         return
 
-    engine = create_engine(address, pool_pre_ping=True)
+    engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     State.metadata.create_all(engine)
 
