@@ -5,9 +5,7 @@ if (args.length < 4) {
   console.log(0);
 } else {
   args.sort(comparison);
-
-  num = (args[args.length - 2]);
-  console.log(num);
+  console.log(args[args.length - 2]);
 }
 
 function comparison (a, b) {
