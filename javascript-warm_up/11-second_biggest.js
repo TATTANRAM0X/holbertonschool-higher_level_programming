@@ -8,6 +8,7 @@ if (args.length < 4) {
 
   num = (args[args.length - 2]);
   console.log(num);
+  console.log(args);
 }
 
 function comparison (a, b) {
